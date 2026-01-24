@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/kefinity-api/kefinity-api-system/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kefinity-api/kefinity-api-system/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kefinity-api/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kefinity-api/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kefinity-auth/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kefinity-auth/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kefinity-common/kefinity-common-bom/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kefinity-common/kefinity-common-bom/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kefinity-common/kefinity-common-core/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kefinity-common/kefinity-common-core/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kefinity-common/kefinity-common-doc/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kefinity-common/kefinity-common-doc/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kefinity-common/kefinity-common-json/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kefinity-common/kefinity-common-json/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kefinity-common/kefinity-common-log/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kefinity-common/kefinity-common-log/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kefinity-common/kefinity-common-mybatis/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kefinity-common/kefinity-common-mybatis/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kefinity-common/kefinity-common-satoken/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kefinity-common/kefinity-common-satoken/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kefinity-common/kefinity-common-web/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kefinity-common/kefinity-common-web/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kefinity-common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kefinity-common/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kefinity-gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kefinity-gateway/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kefinity-modules/kefinity-system/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kefinity-modules/kefinity-system/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kefinity-modules/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kefinity-modules/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

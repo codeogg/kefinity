@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.kefinity</groupId>
+        <artifactId>kefinity-server</artifactId>
+        <version>${revision}</version>
+    </parent>
+
+    <artifactId>kefinity-common</artifactId>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>kefinity-common-bom</module>
+        <module>kefinity-common-core</module>
+        <module>kefinity-common-doc</module>
+        <module>kefinity-common-json</module>
+        <module>kefinity-common-log</module>
+        <module>kefinity-common-mybatis</module>
+        <module>kefinity-common-satoken</module>
+        <module>kefinity-common-web</module>
+    </modules>
+
+
+</project>

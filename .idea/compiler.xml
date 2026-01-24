@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="kefinity-gateway" />
+        <module name="kefinity-common-json" />
+        <module name="kefinity-common-satoken" />
+        <module name="kefinity-api-system" />
+        <module name="kefinity-auth" />
+        <module name="kefinity-common-mybatis" />
+        <module name="kefinity-common-log" />
+        <module name="kefinity-common-web" />
+        <module name="kefinity-common-core" />
+        <module name="kefinity-common-doc" />
+        <module name="kefinity-system" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="kefinity-api" options="" />
+      <module name="kefinity-auth" options="" />
+      <module name="kefinity-common" options="" />
+      <module name="kefinity-gateway" options="" />
+      <module name="kefinity-modules" options="" />
+      <module name="kefinity-server" options="" />
+    </option>
+  </component>
+</project>
