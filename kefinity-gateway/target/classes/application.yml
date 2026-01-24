@@ -1,0 +1,51 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+spring:
+  application:
+    name: gateway-service
+  profiles:
+    active: dev
+    include: common
+  cloud:
+    nacos:
+      server-addr: 127.0.0.1:8848
+      config:
+        import-check:
+          enabled: false
+    gateway:
+      server:
+        webflux:
+          discovery:
+            locator:
+              enabled: true
+              lower-case-service-id: true
+          routes:
+            # 认证模块
+            - id: auth_route
+              uri: lb://auth-service          # lb:// 代表从注册中心负载均衡
+              predicates:
+                - Path=/auth/** # 匹配规则
+              filters:
+                - StripPrefix=1
+            # 系统模块
+            - id: system_route
+              uri: lb://system-system
+              predicates:
+                - Path=/system/**
+              filters:
+                - StripPrefix=1
+  main:
+    allow-bean-definition-overriding: true
+
+security:
+  ignore:
+    whites:
+      - /auth/code
+      - /auth/logout
+      - /auth/login
+      - /*/v3/api-docs
+      - /*/error
+      - /csrf
