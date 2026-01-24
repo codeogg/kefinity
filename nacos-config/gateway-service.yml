@@ -1,20 +1,15 @@
-server:
-  port: 8080
-  servlet:
-    context-path: /
+security:
+  ignore:
+    whites:
+      - /auth/code
+      - /auth/logout
+      - /auth/login
+      - /*/v3/api-docs
+      - /*/error
+      - /csrf
 
 spring:
-  application:
-    name: gateway-service
-  profiles:
-    active: dev
-    include: common
   cloud:
-    nacos:
-      server-addr: 127.0.0.1:8848
-      config:
-        import-check:
-          enabled: false
     gateway:
       server:
         webflux:
@@ -22,6 +17,7 @@ spring:
             locator:
               enabled: true
               lower-case-service-id: true
+
           routes:
             # 认证模块
             - id: auth_route
@@ -37,15 +33,3 @@ spring:
                 - Path=/system/**
               filters:
                 - StripPrefix=1
-  main:
-    allow-bean-definition-overriding: true
-
-security:
-  ignore:
-    whites:
-      - /auth/code
-      - /auth/logout
-      - /auth/login
-      - /*/v3/api-docs
-      - /*/error
-      - /csrf

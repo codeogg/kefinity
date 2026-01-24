@@ -2,12 +2,14 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="kefinity-gateway" />
         <module name="kefinity-common-json" />
+        <module name="kefinity-common-redis" />
         <module name="kefinity-common-satoken" />
         <module name="kefinity-api-system" />
         <module name="kefinity-auth" />

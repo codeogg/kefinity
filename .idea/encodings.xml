@@ -19,6 +19,8 @@
     <file url="file://$PROJECT_DIR$/kefinity-common/kefinity-common-log/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/kefinity-common/kefinity-common-mybatis/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/kefinity-common/kefinity-common-mybatis/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kefinity-common/kefinity-common-redis/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/kefinity-common/kefinity-common-redis/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/kefinity-common/kefinity-common-satoken/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/kefinity-common/kefinity-common-satoken/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/kefinity-common/kefinity-common-web/src/main/java" charset="UTF-8" />

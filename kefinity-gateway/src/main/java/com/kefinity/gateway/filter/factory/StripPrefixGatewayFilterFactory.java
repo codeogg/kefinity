@@ -23,42 +23,36 @@ public class StripPrefixGatewayFilterFactory
 
     @Override
     public GatewayFilter apply(Config config) {
-        return new GatewayFilter() {
-            @Override
-            public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
-                ServerHttpRequest request = exchange.getRequest();
+        return (exchange, chain) -> {
+            ServerHttpRequest request = exchange.getRequest();
 
-                // 获取原始路径
+            String path = request.getURI().getRawPath();
+            String[] originalParts = StringUtils.tokenizeToStringArray(path, "/");
 
-                // aaaa/b/c/   如果parts为1，则最终路径为/b/c
-                String path = request.getURI().getRawPath();
-                String[] originalParts = StringUtils.tokenizeToStringArray(path, "/");
-
-                StringBuilder newPath = new StringBuilder("/");
-                for (int i = 0; i < originalParts.length; i++) {
-                    if (i >= config.getParts()) {
-                        // only append slash if this is the second part or greater
-                        if (newPath.length() > 1) {
-                            newPath.append('/');
-                        }
-                        newPath.append(originalParts[i]);
+            StringBuilder newPath = new StringBuilder("/");
+            for (int i = 0; i < originalParts.length; i++) {
+                if (i >= config.getParts()) {
+                    // only append slash if this is the second part or greater
+                    if (newPath.length() > 1) {
+                        newPath.append('/');
                     }
+                    newPath.append(originalParts[i]);
                 }
-                if (newPath.length() > 1 && path.endsWith("/")) {
-                    newPath.append('/');
-                }
-
-                String prefix = "/" + originalParts[config.getParts() - 1];
-
-                ServerHttpRequest newRequest = request.mutate()
-                        .header("X-Forwarded-Prefix", prefix)
-                        .path(newPath.toString())
-                        .build();
-
-                exchange.getAttributes().put(GATEWAY_REQUEST_URL_ATTR, newRequest.getURI());
-
-                return chain.filter(exchange.mutate().request(newRequest).build());
             }
+            if (newPath.length() > 1 && path.endsWith("/")) {
+                newPath.append('/');
+            }
+
+            String prefix = "/" + originalParts[config.getParts() - 1];
+
+            ServerHttpRequest newRequest = request.mutate()
+                    .header("X-Forwarded-Prefix", prefix)
+                    .path(newPath.toString())
+                    .build();
+
+            exchange.getAttributes().put(GATEWAY_REQUEST_URL_ATTR, newRequest.getURI());
+
+            return chain.filter(exchange.mutate().request(newRequest).build());
         };
     }
 

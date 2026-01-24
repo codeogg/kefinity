@@ -56,6 +56,12 @@
                 <artifactId>kefinity-common-web</artifactId>
                 <version>${revision}</version>
             </dependency>
+
+            <dependency>
+                <groupId>com.kefinity</groupId>
+                <artifactId>kefinity-common-redis</artifactId>
+                <version>${revision}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 </project>

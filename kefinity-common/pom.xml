@@ -21,6 +21,7 @@
         <module>kefinity-common-mybatis</module>
         <module>kefinity-common-satoken</module>
         <module>kefinity-common-web</module>
+        <module>kefinity-common-redis</module>
     </modules>
 
 
