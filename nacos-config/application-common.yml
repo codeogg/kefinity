@@ -20,7 +20,7 @@ spring:
         fail-on-unknown-properties: false
   data:
     redis:
-      host: 172.20.50.204
+      host: 172.19.16.1
       port: 6379
       password: love!123
       database: 8

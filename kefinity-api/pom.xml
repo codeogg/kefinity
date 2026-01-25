@@ -15,6 +15,7 @@
     <modules>
         <module>kefinity-api-bom</module>
         <module>kefinity-api-system</module>
+        <module>kefinity-api-interface</module>
     </modules>
 
 </project>

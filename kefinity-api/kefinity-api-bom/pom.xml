@@ -20,6 +20,12 @@
                 <artifactId>kefinity-api-system</artifactId>
                 <version>${revision}</version>
             </dependency>
+
+            <dependency>
+                <groupId>com.kefinity</groupId>
+                <artifactId>kefinity-api-interface</artifactId>
+                <version>${revision}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

@@ -64,8 +64,6 @@ public class CaptchaController {
         captchaVo.setImg(captcha.getImageBase64());
 
         return captchaVo;
-
-
     }
 
 }

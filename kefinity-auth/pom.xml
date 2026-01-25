@@ -36,11 +36,6 @@
 
         <dependency>
             <groupId>com.kefinity</groupId>
-            <artifactId>kefinity-common-core</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.kefinity</groupId>
             <artifactId>kefinity-common-redis</artifactId>
         </dependency>
 
@@ -48,5 +43,21 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>com.kefinity</groupId>
+            <artifactId>kefinity-api-interface</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.kefinity</groupId>
+            <artifactId>kefinity-common-satoken</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
+        </dependency>
+
     </dependencies>
 </project>

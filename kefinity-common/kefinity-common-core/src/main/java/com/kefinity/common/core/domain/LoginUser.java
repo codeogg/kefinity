@@ -1,0 +1,74 @@
+package com.kefinity.common.core.domain;
+
+import lombok.Data;
+
+@Data
+public class LoginUser {
+
+    /**
+     * 用户ID
+     */
+    private Long userId;
+
+    /**
+     * 用户唯一标识
+     */
+    private String token;
+
+    /**
+     * 登录时间
+     */
+    private Long loginTime;
+
+    /**
+     * 过期时间
+     */
+    private Long expireTime;
+
+    /**
+     * 登录IP地址
+     */
+    private String ipaddr;
+
+    /**
+     * 登录地点
+     */
+    private String loginLocation;
+
+    /**
+     * 浏览器类型
+     */
+    private String browser;
+
+    /**
+     * 操作系统
+     */
+    private String os;
+
+    /**
+     * 用户名
+     */
+    private String username;
+
+    /**
+     * 用户昵称
+     */
+    private String nickname;
+
+    /**
+     * 密码
+     */
+    private String password;
+
+
+    /**
+     * 客户端
+     */
+    private String clientKey;
+
+    /**
+     * 设备类型
+     */
+    private String deviceType;
+
+}

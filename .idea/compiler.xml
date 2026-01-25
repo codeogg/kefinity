@@ -10,15 +10,16 @@
         <module name="kefinity-gateway" />
         <module name="kefinity-common-json" />
         <module name="kefinity-common-redis" />
+        <module name="kefinity-auth" />
+        <module name="kefinity-common-log" />
+        <module name="kefinity-common-core" />
+        <module name="kefinity-system" />
         <module name="kefinity-common-satoken" />
         <module name="kefinity-api-system" />
-        <module name="kefinity-auth" />
         <module name="kefinity-common-mybatis" />
-        <module name="kefinity-common-log" />
         <module name="kefinity-common-web" />
-        <module name="kefinity-common-core" />
+        <module name="kefinity-api-interface" />
         <module name="kefinity-common-doc" />
-        <module name="kefinity-system" />
       </profile>
     </annotationProcessing>
   </component>

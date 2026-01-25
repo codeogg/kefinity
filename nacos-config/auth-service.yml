@@ -2,3 +2,8 @@ security:
   captcha:
     enabled: true
     length: 4
+
+user:
+  password:
+    maxRetryCount: 5
+    lockTime: 10

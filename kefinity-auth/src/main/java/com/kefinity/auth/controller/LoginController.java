@@ -1,9 +1,17 @@
 package com.kefinity.auth.controller;
 
+import cn.hutool.core.util.StrUtil;
+import com.kefinity.auth.properties.CaptchaProperties;
+import com.kefinity.auth.service.SysLoginService;
 import com.kefinity.common.core.domain.LoginBody;
+import com.kefinity.common.core.domain.LoginUser;
 import com.kefinity.common.core.domain.R;
+import com.kefinity.common.core.exception.CaptchaException;
+import com.kefinity.common.redis.utils.RedisUtils;
+import com.kefinity.common.satoken.utils.LoginHelper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,8 +20,45 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class LoginController {
 
-    public R<?> login(@RequestBody LoginBody body){
+    private final CaptchaProperties captchaProperties;
+    private final SysLoginService loginService;
 
-        return R.ok("登录成功");
+    @PostMapping("/login")
+    public R<?> login(@RequestBody LoginBody body) {
+        String username = body.getUsername();
+        String password = body.getPassword();
+        String code = body.getCode();
+        String uuid = body.getUuid();
+
+
+        // 验证码开启
+        if (captchaProperties.getEnabled()) {
+            // 对验证码进行验证
+            validateCaptcha(username, code, uuid);
+        }
+
+        // 根据登录名查询用户
+        LoginUser loginUser = loginService.checkLogin(username, password);
+
+
+        LoginHelper.login(loginUser,null);
+        return R.ok(loginUser);
+    }
+
+    private void validateCaptcha(String username, String code, String uuid) {
+        // 从redis里获取存放的验证码
+        String redisKey = "global:captcha_codes:" + uuid;
+        String captcha = RedisUtils.getCacheObject(redisKey);
+
+        RedisUtils.deleteObject(redisKey);
+        if (captcha == null) {
+            loginService.recordLoginInformation(username, "Error", "验证码错误");
+            throw new CaptchaException("验证码已失效");
+        }
+
+        if (!StrUtil.equalsIgnoreCase(code, captcha)) {
+            loginService.recordLoginInformation(username, "Error", "验证码错误");
+            throw new CaptchaException("验证码错误");
+        }
     }
 }
