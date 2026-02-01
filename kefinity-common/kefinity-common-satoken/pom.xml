@@ -35,5 +35,15 @@
             <groupId>com.kefinity</groupId>
             <artifactId>kefinity-api-system</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>com.kefinity</groupId>
+            <artifactId>kefinity-common-redis</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.github.ben-manes.caffeine</groupId>
+            <artifactId>caffeine</artifactId>
+        </dependency>
     </dependencies>
 </project>

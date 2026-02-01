@@ -2,13 +2,13 @@ package com.kefinity.auth.controller;
 
 import cn.hutool.core.util.StrUtil;
 import com.kefinity.auth.properties.CaptchaProperties;
+import com.kefinity.auth.service.IAuthStrategy;
 import com.kefinity.auth.service.SysLoginService;
 import com.kefinity.common.core.domain.LoginBody;
 import com.kefinity.common.core.domain.LoginUser;
 import com.kefinity.common.core.domain.R;
 import com.kefinity.common.core.exception.CaptchaException;
 import com.kefinity.common.redis.utils.RedisUtils;
-import com.kefinity.common.satoken.utils.LoginHelper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -37,11 +37,7 @@ public class LoginController {
             validateCaptcha(username, code, uuid);
         }
 
-        // 根据登录名查询用户
-        LoginUser loginUser = loginService.checkLogin(username, password);
-
-
-        LoginHelper.login(loginUser,null);
+        LoginUser loginUser = IAuthStrategy.login(username, password, "password");
         return R.ok(loginUser);
     }
 
